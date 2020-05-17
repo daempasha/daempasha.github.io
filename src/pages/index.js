@@ -5,6 +5,7 @@ import React, { useState, useEffect} from 'react';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import {Element} from 'react-scroll';
+
 function iterateFunction(i, maxSize) {
   let temp = i
   if(temp < maxSize){
@@ -23,7 +24,7 @@ const IndexPage = () => {
     'Gamer.'
   ];
   const [counter, setCounter] = useState(0)
-  
+
   const workHistory = [
     {
       date: 'Jun 2020 - present',
@@ -62,6 +63,14 @@ const IndexPage = () => {
     },
   ]
 
+  const themeColors = {
+    mainBg: '#2B2C2C',
+    secondaryBg: '#252525',
+    mainFont: '#FFFFFF',
+    secondaryFont: '',
+    titleFont: '#8C7AE6',
+  }
+
   const educationHistory = [
     {
       date: 'Sep 2018 - Jul 2018',
@@ -88,11 +97,18 @@ const IndexPage = () => {
     <div>
       <Header />
       <Element name="aboutme">
-        <Section backgroundColour='#2B2C2C' padding={{y: '6em', x: '20em'}} >
+        <Section backgroundColour={themeColors.mainBg} padding={{y: '6em', x: '20em'}} >
               <div className="flex">
                 <div>
                   <h1 style={{fontSize: '60px'}}>Daem Pasha</h1>
                   <p className='sub-text' style={{fontSize: '24px'}}>{listOfText[counter]}</p>
+                  <div className='icon-container'>
+                    <a target='_blank' href='https://github.com/daempasha'><i className="fab fa-github pr-5 fa-2x icon gh"></i></a>
+                    <a target='_blank' href='https://www.linkedin.com/in/daempasha/'><i className="fab fa-linkedin fa-2x icon li"></i></a>
+                    <a href='https://drive.google.com/uc?export=download&id=1g0lA9ghAItdFjd-56YJjQP8I05O3W7Uw'><i className="fas fa-file-pdf fa-2x icon pdf"></i></a>
+
+                  </div>
+
                 </div>
                 <div>
                   <img width='600px' src={'/programming.svg'}/>
@@ -102,7 +118,7 @@ const IndexPage = () => {
       </Element>
 
       <Element name="work">
-        <Section backgroundColour='#252525' padding={{y: '4em', x: '20em'}} title='Work'>
+        <Section backgroundColour={themeColors.secondaryBg} padding={{y: '4em', x: '20em'}} title='Work'>
           <VerticalTimeline>
             {workHistory.map(object => 
               <VerticalTimelineElement
@@ -120,7 +136,7 @@ const IndexPage = () => {
       </Element>
 
       <Element name="education">
-        <Section backgroundColour='#2D2E2E' padding={{y: '4em', x: '20em'}} title='Education'>
+        <Section backgroundColour={themeColors.mainBg} padding={{y: '4em', x: '20em'}} title='Education'>
           <VerticalTimeline>
             {educationHistory.map(object => 
               <VerticalTimelineElement
@@ -137,7 +153,7 @@ const IndexPage = () => {
       </Element>
 
       <Element name="projects">
-        <Section backgroundColour='#252525' padding={{y: '4em', x: '20em'}} title='Projects'>
+        <Section backgroundColour={themeColors.secondaryBg} padding={{y: '4em', x: '20em'}} title='Projects'>
             <div style={{backgroundColor: '#2D2E2E', padding: '7em', borderRadius: '10px'}}>
                 <img width='15%' src='./programming.svg'/>
                 
@@ -145,11 +161,11 @@ const IndexPage = () => {
         </Section>
       </Element> 
 
-      <Element name="cv">
-        <Section backgroundColour='#2D2E2E' padding={{y: '4em', x: '20em'}}>
-          <div style={{textAlign: "center"}}>
-            <h1 style={{marginBottom: '2em'}}>Download CV</h1>
-            <a className='link-button' href='https://drive.google.com/uc?export=download&id=1g0lA9ghAItdFjd-56YJjQP8I05O3W7Uw'><i className="fas fa-download"></i>Download</a>
+      <Element name="footer">
+        <Section backgroundColour='#1E1E1E' padding={{y: '4em', x: '10em'}}>
+          <div>
+            <p>Powered by: </p>
+            <a target='_blank' href='https://reactjs.org/'><i className="fab fa-react fa-2x react"></i></a>
           </div>
         </Section>     
       </Element>   

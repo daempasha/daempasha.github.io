@@ -25,19 +25,49 @@ div {
 }
 
 
-.link-button {
-    background-color: #8C7AE6;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    color: #FFFFFF;
+.mb-5 {
+    margin-bottom: 5px;
+}
 
-    i {
-        margin-right: 10px;
+.react {
+    animation: react-spin infinite 5s linear;
+    color: #61DBFB;
+}
+
+@keyframes react-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
     }
 }
 
-.mb-5 {
-    margin-bottom: 5px;
+.icon {
+    transition: 0.1s all;
+
+    &.li {
+        color: #0077B5;
+    }
+
+    &.pdf {
+        color: #F15642;
+
+    }
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+
+.icon-container {
+    display: flex;
+    padding: 1em 0em;
+    justify-content: flex-start;
+
+    a {
+        padding-right: 1em;
+    }
 }

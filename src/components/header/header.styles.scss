@@ -1,10 +1,27 @@
 .header {
     background-color: #2B2C2C;
-    padding: 5em 20em;
+    padding: 1em 10em;
+    position: fixed;
+    width: calc(100% - 10em);
+    top: 0;
+    z-index: 999999;
+    transition: 0.5s;
+
+    &.sticky {
+        background-color: #1e1e1e;
+        padding: 1em 10em;
+        font-size: 6em;
+        width: calc(100% - 10em);
+        font-size: 1em;
+    }
 }
+
+
+
 
 .title {
     color: #8c7ae6;
+    cursor: pointer;
 }
 
 
@@ -19,6 +36,7 @@ ul {
         display: inline-block;
         padding: 0px 10px;
         list-style-type: none;
+        cursor: pointer;
 
         a {
             text-decoration: none;
